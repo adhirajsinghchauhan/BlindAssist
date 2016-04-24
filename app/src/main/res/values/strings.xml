@@ -2,9 +2,14 @@
 	<string name = "app_name">BlindAssist</string>
 	<string name = "title_activity_maps">BlindAssist</string>
 	<string name = "title_activity_settings">Settings</string>
+	<string name = "title_activity_developer">Developer</string>
+	<string name = "title_activity_login">Hi, let\'s get started</string>
 
+	<!--    DeveloperActivity   -->
 	<string name = "developer_name">Adhiraj Singh Chauhan</string>
 	<string name = "developer_email">adhirajsinghchauhan@gmail.com</string>
+	<string name = "developer_phone1">+91 95913 92237</string>
+	<string name = "developer_phone2">+91 95605 47016</string>
 
 	<!--    SettingsActivity    -->
 	<string name = "summaryOn">Enabled</string>
@@ -13,13 +18,13 @@
 	<string name = "subscribedOn">Subscribed</string>
 	<string name = "subscribedOff">Not Subscribed</string>
 
-	<string name = "subscription_codemeet_key">CodeMeet</string>
-	<string name = "subscription_webmeet_key">WebMeet</string>
-	<string name = "subscription_designmeet_key">DesignMeet</string>
+	<string name = "subscription_map_key">Route Helper</string>
+	<string name = "subscription_face_key">Facial Recognition</string>
+	<string name = "subscription_ocr_key">Text to Speech</string>
 
-	<string name = "subscrition_codemeet_label">CodeMeet</string>
-	<string name = "subscrition_webmeet_label">WebMeet</string>
-	<string name = "subscrition_designmeet_label">DesignMeet</string>
+	<string name = "subscription_map_label">Route Helper</string>
+	<string name = "subscription_face_label">Facial Recognition</string>
+	<string name = "subscription_ocr_label">Text to Speech</string>
 
 	<string name = "notifications_label">Push Notifications</string>
 	<string name = "notifications_key">notifications</string>
@@ -35,14 +40,19 @@
 	<string name = "vibration_label">Vibration</string>
 	<string name = "vibration_key">vibration</string>
 
-	<string name = "defaultScreen">Default Screen</string>
-	<string name = "defaultScreen_key">defaultScreen</string>
-	<string name = "defaultScreen_home">Home</string>
-	<string name = "defaultScreen_profile">Profile</string>
-	<string name = "defaultScreen_notifications">Notifications</string>
-	<string name = "defaultScreen_iecse">IE CSE stuff</string>
-	<string name = "defaultScreen_team">Team</string>
-
 	<string name = "colouredNavigationBar_label">Coloured Navigation Bar</string>
 	<string name = "colouredNavigationBar_key">colouredNavigationBar</string>
+
+	<!--    LogInActivity   -->
+	<string name = "username">Username</string>
+	<string name = "password">Password</string>
+	<string name = "name">Name</string>
+	<string name = "registrationNumber">Registration number</string>
+	<string name = "mobile">Mobile</string>
+	<string name = "email">Email</string>
+	<string name = "login">Login</string>
+	<string name = "signup">Sign up</string>
+	<string name = "error_field_required">This field is required</string>
+	<string name = "go_to_signup">Not registered yet? Sign up.</string>
+	<string name = "go_to_login">Go back</string>
 </resources>

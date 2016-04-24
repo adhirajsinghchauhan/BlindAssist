@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	android:id = "@+id/background_layout"
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	android:layout_width = "match_parent"
+	android:layout_height = "match_parent">
+
+	<LinearLayout
+		android:layout_width = "match_parent"
+		android:layout_height = "wrap_content"
+		android:background = "?android:attr/selectableItemBackground"
+		android:clickable = "true"
+		android:orientation = "vertical">
+
+		<LinearLayout
+			android:id = "@+id/name_layout"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:padding = "16dp">
+
+			<ImageView
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:src = "@drawable/about"
+				android:tint = "?attr/colorAccent" />
+
+			<LinearLayout
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:layout_marginStart = "16dp"
+				android:animateLayoutChanges = "true"
+				android:orientation = "vertical">
+
+				<TextView
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:text = "Name"
+					android:textSize = "20sp"
+					android:textStyle = "bold" />
+
+				<TextView
+					android:id = "@+id/about_about"
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:layout_marginTop = "6dp"
+					android:text = "@string/developer_name"
+					android:textSize = "16sp"
+					android:textStyle = "italic" />
+
+				<View
+					android:id = "@+id/divider1"
+					android:layout_width = "match_parent"
+					android:layout_height = "1dp"
+					android:layout_marginTop = "16dp"
+					android:background = "@android:color/darker_gray" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:id = "@+id/email_layout"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:padding = "16dp">
+
+			<ImageView
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:src = "@drawable/gmail"
+				android:tint = "?attr/colorAccent" />
+
+			<LinearLayout
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:layout_marginStart = "16dp"
+				android:animateLayoutChanges = "true"
+				android:orientation = "vertical">
+
+				<TextView
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:text = "Email"
+					android:textSize = "20sp"
+					android:textStyle = "bold" />
+
+				<TextView
+					android:id = "@+id/about_vision"
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:layout_marginTop = "6dp"
+					android:text = "@string/developer_email"
+					android:textSize = "16sp"
+					android:textStyle = "italic" />
+
+				<View
+					android:id = "@+id/divider2"
+					android:layout_width = "match_parent"
+					android:layout_height = "1dp"
+					android:layout_marginTop = "16dp"
+					android:background = "@android:color/darker_gray" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id = "@+id/phone_layout"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:padding = "16dp">
+
+			<ImageView
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:src = "@drawable/phone"
+				android:tint = "?attr/colorAccent" />
+
+			<LinearLayout
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:layout_marginStart = "16dp"
+				android:animateLayoutChanges = "true"
+				android:orientation = "vertical">
+
+				<TextView
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:text = "Phone"
+					android:textSize = "20sp"
+					android:textStyle = "bold" />
+
+				<TextView
+					android:id = "@+id/developer_phone1"
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:layout_marginTop = "6dp"
+					android:text = "@string/developer_phone1"
+					android:textSize = "16sp"
+					android:textStyle = "italic" />
+
+				<TextView
+					android:id = "@+id/developer_phone2"
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:layout_marginTop = "6dp"
+					android:text = "@string/developer_phone2"
+					android:textSize = "16sp"
+					android:textStyle = "italic" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>

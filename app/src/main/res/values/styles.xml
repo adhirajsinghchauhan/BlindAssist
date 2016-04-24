@@ -1,11 +1,47 @@
 <resources>
 
-	<!-- Base application theme. -->
-	<style name = "AppTheme" parent = "Theme.AppCompat.NoActionBar">
-		<!-- Customize your theme here. -->
-		<item name = "colorPrimary">@color/colorPrimary</item>
-		<item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name = "colorAccent">@color/colorAccent</item>
+	<!--    Base application theme (light)  -->
+	<style name = "AppThemeLight" parent = "Theme.AppCompat.Light.NoActionBar">
+		<item name = "colorPrimary">@color/iecse_blue</item>
+		<item name = "colorPrimaryDark">@color/darker_iecse_blue</item>
+		<item name = "android:textColorTertiary">@color/slightly_less_black</item>
+		<item name = "android:textColorTertiaryInverse">@color/alice_blue</item>
+		<item name = "android:colorAccent">@color/orange</item>
+		<item name = "colorAccent">@color/orange</item>
+		<item name = "android:statusBarColor">@color/dark_overlay</item>
+		<item name = "android:windowDrawsSystemBarBackgrounds">true</item>
+		<item name = "android:windowContentTransitions">true</item>
+		<item name = "android:windowEnterTransition">@transition/details_enter</item>
+		<item name = "android:windowExitTransition">@transition/details_exit</item>
 	</style>
+
+	<!--    Base application theme (dark)   -->
+	<style name = "AppThemeDark" parent = "Theme.AppCompat.NoActionBar">
+		<item name = "colorPrimary">@color/darker_iecse_blue</item>
+		<item name = "colorPrimaryDark">@color/darker_iecse_blue</item>
+		<item name = "android:textColorTertiary">@color/alice_blue</item>
+		<item name = "android:textColorTertiaryInverse">@color/slightly_less_black</item>
+		<item name = "android:colorAccent">@color/yellow</item>
+		<item name = "colorAccent">@color/yellow</item>
+		<item name = "android:statusBarColor">@color/dark_overlay</item>
+		<item name = "android:windowDrawsSystemBarBackgrounds">true</item>
+		<item name = "android:windowContentTransitions">true</item>
+		<item name = "android:windowEnterTransition">@transition/details_enter</item>
+		<item name = "android:windowExitTransition">@transition/details_exit</item>
+	</style>
+
+	<style name = "AppThemeLightColouredNavigationBar" parent = "AppThemeLight">
+		<!--    Added navigation bar colour -->
+		<item name = "android:navigationBarColor">@color/iecse_blue</item>
+	</style>
+
+	<style name = "AppThemeDarkColouredNavigationBar" parent = "AppThemeDark">
+		<!--    Added navigation bar colour -->
+		<item name = "android:navigationBarColor">@color/darker_iecse_blue</item>
+	</style>
+
+	<style name = "AppThemeLight.AppBarOverlay" parent = "ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+	<style name = "AppThemeLight.PopupOverlay" parent = "ThemeOverlay.AppCompat.Light" />
 
 </resources>

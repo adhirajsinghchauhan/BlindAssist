@@ -1,0 +1,230 @@
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:layout_width = "match_parent"
+	android:layout_height = "match_parent"
+	android:fitsSystemWindows = "true"
+	tools:context = ".activities.LogInActivity"
+	tools:ignore = "MergeRootFrame">
+
+	<android.support.design.widget.AppBarLayout
+		android:id = "@+id/app_bar"
+		android:layout_width = "match_parent"
+		android:layout_height = "@dimen/app_bar_height"
+		android:fitsSystemWindows = "true"
+		android:theme = "@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+		<android.support.design.widget.CollapsingToolbarLayout
+			android:id = "@+id/toolbar_layout"
+			android:layout_width = "match_parent"
+			android:layout_height = "match_parent"
+			android:fitsSystemWindows = "true"
+			app:contentScrim = "?attr/colorPrimary"
+			app:layout_scrollFlags = "scroll|exitUntilCollapsed"
+			app:toolbarId = "@+id/toolbar">
+
+			<android.support.v7.widget.Toolbar
+				android:id = "@+id/detail_toolbar"
+				android:layout_width = "match_parent"
+				android:layout_height = "?attr/actionBarSize"
+				app:layout_collapseMode = "pin"
+				app:popupTheme = "@style/ThemeOverlay.AppCompat.Light" />
+
+		</android.support.design.widget.CollapsingToolbarLayout>
+
+	</android.support.design.widget.AppBarLayout>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id = "@+id/fab"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:layout_gravity = "center_vertical|start"
+		android:layout_margin = "@dimen/fab_margin"
+		android:src = "@drawable/ic_action_switch"
+		app:layout_anchor = "@+id/item_detail_container"
+		app:layout_anchorGravity = "top|end" />
+
+	<TextView
+		android:id = "@+id/fabLabel"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:labelFor = "@id/fab"
+		android:paddingEnd = "75dp"
+		android:paddingStart = "16dp"
+		android:paddingTop = "16dp"
+		android:text = "Login instead"
+		android:textColor = "?attr/colorAccent"
+		app:layout_anchor = "@id/fab"
+		app:layout_anchorGravity = "center" />
+
+	<Button
+		android:id = "@+id/skip"
+		android:layout_width = "match_parent"
+		android:layout_height = "wrap_content"
+		android:layout_gravity = "bottom"
+		android:background = "@color/black"
+		android:onClick = "skip"
+		android:padding = "16dp"
+		android:text = "Skip"
+		android:textColor = "@color/alice_blue" />
+
+	<android.support.v4.widget.NestedScrollView
+		android:id = "@+id/item_detail_container"
+		android:layout_width = "match_parent"
+		android:layout_height = "wrap_content"
+		app:layout_behavior = "@string/appbar_scrolling_view_behavior">
+
+		<ViewFlipper
+			android:id = "@+id/viewFlipper"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content"
+			android:layout_alignParentBottom = "true"
+			android:layout_centerHorizontal = "true">
+
+			<RelativeLayout
+				android:id = "@+id/signup_form"
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:orientation = "vertical"
+				android:padding = "32dp">
+
+				<android.support.design.widget.TextInputLayout
+					android:id = "@+id/nameField"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content">
+
+					<EditText
+						android:id = "@+id/name"
+						android:layout_width = "match_parent"
+						android:layout_height = "wrap_content"
+						android:hint = "@string/name"
+						android:inputType = "textCapWords" />
+				</android.support.design.widget.TextInputLayout>
+
+				<android.support.design.widget.TextInputLayout
+					android:id = "@+id/emailField"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/nameField"
+					android:layout_marginTop = "16dp">
+
+					<EditText
+						android:id = "@+id/email"
+						android:layout_width = "match_parent"
+						android:layout_height = "wrap_content"
+						android:hint = "@string/email"
+						android:inputType = "textEmailAddress|textAutoComplete" />
+				</android.support.design.widget.TextInputLayout>
+
+				<android.support.design.widget.TextInputLayout
+					android:id = "@+id/usernameField"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/emailField"
+					android:layout_marginTop = "16dp">
+
+					<EditText
+						android:id = "@+id/username_signup"
+						android:layout_width = "match_parent"
+						android:layout_height = "wrap_content"
+						android:digits = "_,abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMNOPQRSTUVWXYZ,0123456789"
+						android:hint = "@string/username"
+						android:inputType = "text" />
+				</android.support.design.widget.TextInputLayout>
+
+				<android.support.design.widget.TextInputLayout
+					android:id = "@+id/passwordField"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/usernameField"
+					android:layout_marginTop = "16dp">
+
+					<EditText
+						android:id = "@+id/password_signup"
+						android:layout_width = "match_parent"
+						android:layout_height = "wrap_content"
+						android:hint = "@string/password"
+						android:inputType = "textPassword" />
+				</android.support.design.widget.TextInputLayout>
+
+				<CheckBox
+					android:id = "@+id/checkbox_show_password_signup"
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/passwordField"
+					android:layout_gravity = "start"
+					android:layout_marginTop = "10dp"
+					android:text = "Show Password" />
+
+				<Button
+					android:id = "@+id/signUp"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/checkbox_show_password_signup"
+					android:layout_marginTop = "16dp"
+					android:background = "?attr/colorPrimaryDark"
+					android:onClick = "signUp"
+					android:text = "@string/signup"
+					android:textColor = "@color/white" />
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:id = "@+id/login_form"
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content"
+				android:orientation = "vertical"
+				android:padding = "32dp">
+
+				<android.support.design.widget.TextInputLayout
+					android:id = "@id/usernameField"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content">
+
+					<EditText
+						android:id = "@+id/username_login"
+						android:layout_width = "match_parent"
+						android:layout_height = "wrap_content"
+						android:digits = "_,abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMNOPQRSTUVWXYZ,0123456789"
+						android:hint = "@string/username"
+						android:inputType = "text" />
+				</android.support.design.widget.TextInputLayout>
+
+				<android.support.design.widget.TextInputLayout
+					android:id = "@id/passwordField"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/usernameField"
+					android:layout_marginTop = "16dp">
+
+					<EditText
+						android:id = "@+id/password_login"
+						android:layout_width = "match_parent"
+						android:layout_height = "wrap_content"
+						android:hint = "@string/password"
+						android:inputType = "textPassword" />
+				</android.support.design.widget.TextInputLayout>
+
+				<CheckBox
+					android:id = "@+id/checkbox_show_password_login"
+					android:layout_width = "wrap_content"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/passwordField"
+					android:layout_gravity = "start"
+					android:layout_marginTop = "10dp"
+					android:text = "Show Password" />
+
+				<Button
+					android:id = "@+id/login"
+					android:layout_width = "match_parent"
+					android:layout_height = "wrap_content"
+					android:layout_below = "@id/checkbox_show_password_login"
+					android:layout_marginTop = "16dp"
+					android:background = "?attr/colorPrimary"
+					android:onClick = "logIn"
+					android:text = "@string/login"
+					android:textColor = "@color/alice_blue" />
+			</RelativeLayout>
+		</ViewFlipper>
+	</android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

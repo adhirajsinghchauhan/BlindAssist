@@ -1,14 +1,17 @@
 package app.demons.blindassist.fragments;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -29,7 +32,7 @@ import app.demons.blindassist.R;
 /**
  * @author Adhiraj Singh Chauhan
  */
-public class MapFragment extends Fragment implements GoogleMap.OnMyLocationChangeListener {
+public class MapFragment extends Fragment implements GoogleMap.OnMyLocationChangeListener, View.OnTouchListener {
 
 	private MapView mapView;
 	private GoogleMap googleMap;
@@ -187,5 +190,12 @@ public class MapFragment extends Fragment implements GoogleMap.OnMyLocationChang
 	public void onLowMemory() {
 		super.onLowMemory();
 		mapView.onLowMemory();
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+		vibrator.vibrate(250);
+		return true;
 	}
 }

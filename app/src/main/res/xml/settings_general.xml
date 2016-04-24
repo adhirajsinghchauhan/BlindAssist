@@ -29,47 +29,40 @@
 
 		<PreferenceScreen
 			android:icon = "@drawable/subscribe"
-			android:title = "Subscriptions">
+			android:title = "Features">
 			<CheckBoxPreference
 				android:defaultValue = "@string/subscribedOn"
 				android:icon = "@drawable/code"
-				android:key = "@string/subscription_codemeet_key"
+				android:key = "@string/subscription_map_key"
 				android:summaryOff = "@string/subscribedOff"
 				android:summaryOn = "@string/subscribedOn"
-				android:title = "@string/subscrition_codemeet_label" />
+				android:title = "@string/subscription_map_label" />
 			<CheckBoxPreference
 				android:defaultValue = "@string/subscribedOn"
 				android:icon = "@drawable/web"
-				android:key = "@string/subscription_webmeet_key"
+				android:key = "@string/subscription_face_key"
 				android:summaryOff = "@string/subscribedOff"
 				android:summaryOn = "@string/subscribedOn"
-				android:title = "@string/subscrition_webmeet_label" />
+				android:title = "@string/subscription_face_label" />
 			<CheckBoxPreference
 				android:defaultValue = "@string/summaryOn"
 				android:icon = "@drawable/design"
-				android:key = "@string/subscription_designmeet_key"
+				android:key = "@string/subscription_ocr_key"
 				android:summaryOff = "@string/subscribedOff"
 				android:summaryOn = "@string/subscribedOn"
-				android:title = "@string/subscrition_designmeet_label" />
+				android:title = "@string/subscription_ocr_label" />
 		</PreferenceScreen>
 	</PreferenceCategory>
 
 	<PreferenceCategory android:title = "UI">
 		<ListPreference
-			android:defaultValue = "@string/theme_light"
+			android:defaultValue = "@string/theme_dark"
 			android:entries = "@array/theme_values"
 			android:entryValues = "@array/theme_values"
 			android:icon = "@drawable/theme"
 			android:key = "@string/theme_key"
 			android:title = "@string/theme_label" />
 
-		<ListPreference
-			android:defaultValue = "@string/defaultScreen_home"
-			android:entries = "@array/defaultScreen_values"
-			android:entryValues = "@array/defaultScreen_values"
-			android:icon = "@drawable/screen"
-			android:key = "@string/defaultScreen_key"
-			android:title = "@string/defaultScreen" />
 		<SwitchPreference
 			android:defaultValue = "@string/summaryOff"
 			android:icon = "@drawable/navigation"

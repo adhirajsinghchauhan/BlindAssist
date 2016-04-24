@@ -1,25 +1,27 @@
 package app.demons.blindassist.fragments;
 
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import app.demons.blindassist.R;
-import app.demons.blindassist.utility.Camera2Fragment;
 
 /**
  * @author Adhiraj Singh Chauhan
  */
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnTouchListener {
 
 	private static TabLayout tabLayout;
 	private static ViewPager viewPager;
@@ -33,7 +35,7 @@ public class HomeFragment extends Fragment {
 
 		viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
 
-//		setUpWithViewPager doesn't work without using a Runnable interface. Support library bug, maybe?
+		// setUpWithViewPager doesn't work without using a Runnable interface. Support library bug, maybe?
 		tabLayout.post(new Runnable() {
 			@Override
 			public void run() {
@@ -46,6 +48,13 @@ public class HomeFragment extends Fragment {
 			tabLayout.setElevation(elevation);
 		}
 		return view;
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+		vibrator.vibrate(250);
+		return true;
 	}
 
 	class MyAdapter extends FragmentPagerAdapter {

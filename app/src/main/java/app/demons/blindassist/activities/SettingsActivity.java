@@ -1,14 +1,18 @@
 package app.demons.blindassist.activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
+import android.view.MotionEvent;
+import android.view.View;
 
 import app.demons.blindassist.R;
 
@@ -16,28 +20,27 @@ import app.demons.blindassist.R;
  * @author Adhiraj Singh Chauhan
  */
 
-public class SettingsActivity extends PreferenceActivity implements Preference.OnPreferenceChangeListener {
+public class SettingsActivity extends PreferenceActivity implements Preference.OnPreferenceChangeListener, View.OnTouchListener {
 	public void onCreate(Bundle savedInstanceState) {
 		final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//		String theme = sharedPreferences.getString("theme", "Light");
-//		boolean colouredNavigationBar = sharedPreferences.getBoolean("colouredNavigationBar", false);
-//
-//		if (colouredNavigationBar) {
-//			if (theme.equals("Light"))
-//				setTheme(R.style.AppThemeLightColouredNavigationBar);
-//			else if (theme.equals("Dark"))
-//				setTheme(R.style.AppThemeDarkColouredNavigationBar);
-//		} else {
-//			if (theme.equals("Light"))
-//				setTheme(R.style.AppThemeLight);
-//			else if (theme.equals("Dark"))
-//				setTheme(R.style.AppThemeDark);
-//		}
+		String theme = sharedPreferences.getString("theme", "Dark");
+		boolean colouredNavigationBar = sharedPreferences.getBoolean("colouredNavigationBar", false);
+
+		if (colouredNavigationBar) {
+			if (theme.equals("Light"))
+				setTheme(R.style.AppThemeLightColouredNavigationBar);
+			else if (theme.equals("Dark"))
+				setTheme(R.style.AppThemeDarkColouredNavigationBar);
+		} else {
+			if (theme.equals("Light"))
+				setTheme(R.style.AppThemeLight);
+			else if (theme.equals("Dark"))
+				setTheme(R.style.AppThemeDark);
+		}
 
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings_general);
-//		bindPreferenceSummaryToValue(findPreference(getString(R.string.theme_key)));
-//		bindPreferenceSummaryToValue(findPreference(getString(R.string.defaultScreen_key)));
+		bindPreferenceSummaryToValue(findPreference(getString(R.string.theme_key)));
 
 		Preference forgotPassword = findPreference("forgotPassword");
 		Preference logout = findPreference("logout");
@@ -71,8 +74,6 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
 					SharedPreferences.Editor editor = sharedPreferences.edit();
 					editor.remove("name")
 							.remove("email")
-							.remove("mobile")
-							.remove("registrationNumber")
 							.remove("username")
 							.remove("isLoggedIn").apply();
 					new AlertDialog.Builder(SettingsActivity.this)
@@ -81,10 +82,10 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
 							.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
-//									MainActivity.navName.setText("");
-//									MainActivity.navEmail.setText("");
-//									Intent intent = new Intent(SettingsActivity.this, LogInActivity.class);
-//									startActivity(intent);
+									MainActivity.navName.setText("");
+									MainActivity.navEmail.setText("");
+									Intent intent = new Intent(SettingsActivity.this, LogInActivity.class);
+									startActivity(intent);
 								}
 							})
 							.setNegativeButton(android.R.string.no, null)
@@ -121,5 +122,12 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
 		final Intent intent = new Intent(this, MainActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(intent);
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+		vibrator.vibrate(250);
+		return true;
 	}
 }
