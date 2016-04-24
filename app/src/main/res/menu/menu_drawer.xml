@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android = "http://schemas.android.com/apk/res/android">
+	<item
+		android:id = "@+id/nav_item_home"
+		android:title = "Home" />
+	<item
+		android:id = "@+id/nav_item_profile"
+		android:title = "Profile" />
+	<item
+		android:id = "@+id/nav_item_notifications"
+		android:title = "Notifications" />
+	<item
+		android:id = "@+id/nav_item_iecse"
+		android:title = "IE CSE stuff">
+	</item>
+	<item
+		android:id = "@+id/nav_item_prometheus"
+		android:title = "Prometheus">
+	</item>
+	<item
+		android:id = "@+id/nav_item_team"
+		android:title = "Team">
+	</item>
+	<item
+		android:id = "@+id/nav_item_feedback"
+		android:title = "Feedback">
+	</item>
+	<group
+		android:id = "@+id/group_settings_id">
+		<item
+			android:id = "@+id/nav_item_settings"
+			android:title = "Settings" />
+		<item
+			android:id = "@+id/nav_item_about"
+			android:title = "About" />
+	</group>
+</menu>

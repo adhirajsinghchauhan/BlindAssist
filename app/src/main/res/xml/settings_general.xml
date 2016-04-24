@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android = "http://schemas.android.com/apk/res/android"
+                  android:layout_width = "match_parent"
+                  android:layout_height = "match_parent">
+
+	<PreferenceCategory
+		android:title = "Notifications">
+		<SwitchPreference
+			android:defaultValue = "@string/summaryOn"
+			android:icon = "@drawable/notification"
+			android:key = "@string/notifications_key"
+			android:summaryOff = "@string/summaryOff"
+			android:summaryOn = "@string/summaryOn"
+			android:title = "@string/notifications_label" />
+		<SwitchPreference
+			android:defaultValue = "@string/summaryOn"
+			android:icon = "@drawable/sound"
+			android:key = "@string/sound_key"
+			android:summaryOff = "@string/summaryOff"
+			android:summaryOn = "@string/summaryOn"
+			android:title = "@string/sound_label" />
+		<SwitchPreference
+			android:defaultValue = "@string/summaryOn"
+			android:icon = "@drawable/vibrate"
+			android:key = "@string/vibration_key"
+			android:summaryOff = "@string/summaryOff"
+			android:summaryOn = "@string/summaryOn"
+			android:title = "@string/vibration_label" />
+
+		<PreferenceScreen
+			android:icon = "@drawable/subscribe"
+			android:title = "Subscriptions">
+			<CheckBoxPreference
+				android:defaultValue = "@string/subscribedOn"
+				android:icon = "@drawable/code"
+				android:key = "@string/subscription_codemeet_key"
+				android:summaryOff = "@string/subscribedOff"
+				android:summaryOn = "@string/subscribedOn"
+				android:title = "@string/subscrition_codemeet_label" />
+			<CheckBoxPreference
+				android:defaultValue = "@string/subscribedOn"
+				android:icon = "@drawable/web"
+				android:key = "@string/subscription_webmeet_key"
+				android:summaryOff = "@string/subscribedOff"
+				android:summaryOn = "@string/subscribedOn"
+				android:title = "@string/subscrition_webmeet_label" />
+			<CheckBoxPreference
+				android:defaultValue = "@string/summaryOn"
+				android:icon = "@drawable/design"
+				android:key = "@string/subscription_designmeet_key"
+				android:summaryOff = "@string/subscribedOff"
+				android:summaryOn = "@string/subscribedOn"
+				android:title = "@string/subscrition_designmeet_label" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title = "UI">
+		<ListPreference
+			android:defaultValue = "@string/theme_light"
+			android:entries = "@array/theme_values"
+			android:entryValues = "@array/theme_values"
+			android:icon = "@drawable/theme"
+			android:key = "@string/theme_key"
+			android:title = "@string/theme_label" />
+
+		<ListPreference
+			android:defaultValue = "@string/defaultScreen_home"
+			android:entries = "@array/defaultScreen_values"
+			android:entryValues = "@array/defaultScreen_values"
+			android:icon = "@drawable/screen"
+			android:key = "@string/defaultScreen_key"
+			android:title = "@string/defaultScreen" />
+		<SwitchPreference
+			android:defaultValue = "@string/summaryOff"
+			android:icon = "@drawable/navigation"
+			android:key = "@string/colouredNavigationBar_key"
+			android:summaryOff = "@string/summaryOff"
+			android:summaryOn = "@string/summaryOn"
+			android:title = "@string/colouredNavigationBar_label" />
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title = "Profile">
+		<Preference
+			android:icon = "@drawable/password"
+			android:key = "forgotPassword"
+			android:title = "Forgot Password" />
+		<Preference
+			android:icon = "@drawable/logout"
+			android:key = "logout"
+			android:title = "Logout" />
+	</PreferenceCategory>
+</PreferenceScreen>

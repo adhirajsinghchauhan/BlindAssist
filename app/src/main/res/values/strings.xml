@@ -1,0 +1,48 @@
+<resources>
+	<string name = "app_name">BlindAssist</string>
+	<string name = "title_activity_maps">BlindAssist</string>
+	<string name = "title_activity_settings">Settings</string>
+
+	<string name = "developer_name">Adhiraj Singh Chauhan</string>
+	<string name = "developer_email">adhirajsinghchauhan@gmail.com</string>
+
+	<!--    SettingsActivity    -->
+	<string name = "summaryOn">Enabled</string>
+	<string name = "summaryOff">Disabled</string>
+
+	<string name = "subscribedOn">Subscribed</string>
+	<string name = "subscribedOff">Not Subscribed</string>
+
+	<string name = "subscription_codemeet_key">CodeMeet</string>
+	<string name = "subscription_webmeet_key">WebMeet</string>
+	<string name = "subscription_designmeet_key">DesignMeet</string>
+
+	<string name = "subscrition_codemeet_label">CodeMeet</string>
+	<string name = "subscrition_webmeet_label">WebMeet</string>
+	<string name = "subscrition_designmeet_label">DesignMeet</string>
+
+	<string name = "notifications_label">Push Notifications</string>
+	<string name = "notifications_key">notifications</string>
+
+	<string name = "sound_label">Sound</string>
+	<string name = "sound_key">sound</string>
+
+	<string name = "theme_label">Theme</string>
+	<string name = "theme_key">theme</string>
+	<string name = "theme_light">Light</string>
+	<string name = "theme_dark">Dark</string>
+
+	<string name = "vibration_label">Vibration</string>
+	<string name = "vibration_key">vibration</string>
+
+	<string name = "defaultScreen">Default Screen</string>
+	<string name = "defaultScreen_key">defaultScreen</string>
+	<string name = "defaultScreen_home">Home</string>
+	<string name = "defaultScreen_profile">Profile</string>
+	<string name = "defaultScreen_notifications">Notifications</string>
+	<string name = "defaultScreen_iecse">IE CSE stuff</string>
+	<string name = "defaultScreen_team">Team</string>
+
+	<string name = "colouredNavigationBar_label">Coloured Navigation Bar</string>
+	<string name = "colouredNavigationBar_key">colouredNavigationBar</string>
+</resources>

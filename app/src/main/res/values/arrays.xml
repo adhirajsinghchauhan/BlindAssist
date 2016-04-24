@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name = "theme_values">
+		<item>@string/theme_light</item>
+		<item>@string/theme_dark</item>
+	</string-array>
+
+	<string-array name = "defaultScreen_values">
+		<item>@string/defaultScreen_home</item>
+		<item>@string/defaultScreen_profile</item>
+		<item>@string/defaultScreen_notifications</item>
+		<item>@string/defaultScreen_iecse</item>
+		<item>@string/defaultScreen_team</item>
+	</string-array>
+
+</resources>
