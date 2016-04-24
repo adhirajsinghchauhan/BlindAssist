@@ -152,14 +152,14 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 	}
 
 	/**
-	 * Given {@code choices} of {@code Size}s supported by a camera, chooses the smallest one whose
+	 * Given choices of sizes supported by a camera, chooses the smallest one whose
 	 * width and height are at least as large as the respective requested values.
 	 *
 	 * @param choices The list of sizes that the camera supports for the intended output class
 	 * @param width   The minimum desired width
 	 * @param height  The minimum desired height
 	 *
-	 * @return The optimal {@code Size}, or an arbitrary one if none were big enough
+	 * @return The optimal size, or an arbitrary one if none were big enough
 	 */
 	static Size chooseBigEnoughSize(Size[] choices, int width, int height) {
 		// Collect the supported resolutions that are at least as big as the preview Surface
@@ -185,9 +185,6 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 		return false;
 	}
 
-	/**
-	 * Compares two {@code Size}s based on their areas.
-	 */
 	static class CompareSizesByArea implements Comparator<Size> {
 		@Override
 		public int compare(Size lhs, Size rhs) {
@@ -197,11 +194,6 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 		}
 	}
 
-	/**
-	 * Called when the user clicks on our {@code SurfaceView}, which has ID {@code mainSurfaceView}
-	 * as defined in the {@code mainactivity.xml} layout file. <p>Captures a full-resolution image
-	 * and saves it to permanent storage.</p>
-	 */
 	public void onClickOnSurfaceView(View v) {
 		if (mCaptureSession != null) {
 			try {
@@ -223,9 +215,7 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 		// Control flow continues in mImageCaptureListener.onImageAvailable()
 	}
 
-	/**
-	 * Callbacks invoked upon state changes in our {@code SurfaceView}.
-	 */
+	// Callback invoked when the state of SurfaceView changes
 	final SurfaceHolder.Callback mSurfaceHolderCallback = new SurfaceHolder.Callback() {
 		private String mCameraId;
 		private boolean mGotSecondCallback;
@@ -315,9 +305,10 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 			}
 		}
 	};
+
 	/**
-	 * Calledbacks invoked upon state changes in our {@code CameraDevice}. <p>These are run on
-	 * {@code mBackgroundThread}.</p>
+	 * Callbacks invoked upon state changes in CameraDevice.
+	 * These are run on a background thread, mBackgroundThread
 	 */
 	final CameraDevice.StateCallback mCameraStateCallback =
 			new CameraDevice.StateCallback() {
@@ -347,8 +338,8 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 				}
 			};
 	/**
-	 * Callbacks invoked upon state changes in our {@code CameraCaptureSession}. <p>These are run on
-	 * {@code mBackgroundThread}.</p>
+	 * Callbacks invoked upon state changes in our CameraCaptureSession.
+	 * These are run on mBackgroundThread
 	 */
 	final CameraCaptureSession.StateCallback mCaptureSessionListener = new CameraCaptureSession.StateCallback() {
 		@Override
@@ -389,7 +380,7 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 	};
 
 	/**
-	 * Callback invoked when we've received a JPEG image from the camera.
+	 * Callback invoked when I receive a JPEG image from the camera.
 	 */
 	final ImageReader.OnImageAvailableListener mImageCaptureListener =
 			new ImageReader.OnImageAvailableListener() {
@@ -402,8 +393,8 @@ public class Camera2Fragment extends Fragment implements View.OnTouchListener {
 			};
 
 	/**
-	 * Deferred processor responsible for saving snapshots to disk. <p>This is run on
-	 * {@code mBackgroundThread}.</p>
+	 * Deferred processor responsible for saving snapshots to disk.
+	 * This is run on, guess what? mBackgroundThread.
 	 */
 	class CapturedImageSaver implements Runnable {
 		private Image mCapture;

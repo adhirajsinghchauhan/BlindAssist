@@ -3,16 +3,18 @@ package app.demons.blindassist.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 
 import app.demons.blindassist.R;
 
@@ -57,20 +59,13 @@ public class SplashActivity extends AppCompatActivity implements View.OnTouchLis
 				finish();
 			}
 		}, splashScreenTimeout);
-		ImageView logo = (ImageView) findViewById(R.id.logo);
-		final AnimationDrawable animationDrawable;
-		if (logo != null) {
-			animationDrawable = (AnimationDrawable) logo.getDrawable();
-			animationDrawable.setCallback(logo);
-			animationDrawable.setVisible(true, true);
-			logo.post(new Runnable() {
-				@Override
-				public void run() {
-					animationDrawable.start();
-				}
-			});
+		CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+		Animation animation = new AlphaAnimation(0, 1);
+		animation.setDuration(1000);
+		animation.setInterpolator(new AccelerateDecelerateInterpolator());
+		if (coordinatorLayout != null) {
+			coordinatorLayout.startAnimation(animation);
 		}
-
 	}
 
 	@Override
