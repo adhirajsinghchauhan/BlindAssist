@@ -19,4 +19,12 @@ Features
 
 Notes
 -----
-Any click or touch input will be accompanied by a vibrate too, to notify the user.
+1. The app needs to access location information for the map
+2. Calling APIs require an active internet connection
+3. Any click or touch input will be accompanied by a vibrate too, to notify the user.
+4. This has been built and compiled for Android SDK 23 (Marshmallow, 6.0.1) **ONLY**. Installation of this app on SDK version <= 23 will fail.
+
+Known Issues
+------------
+1. App needs to be restarted when the activity goes into a paused state.
+	This is because of unregistering the callbacks associated with SurfaceView
