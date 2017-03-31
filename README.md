@@ -3,7 +3,7 @@ This app is my team's submission for AngelHack 2016, created for blind individua
 
 Team
 ----
-* [Adhiraj Singh Chauhan](https://github.com/asc42) (me): Android Developer & Designer
+* [Adhiraj Singh Chauhan](https://github.com/adhirajsinghchauhan) (me): Android Developer & Designer
 * [Bhargav Karanam](https://github.com/bhargavkaranam): Backend developer
 * Anirudh Katoch: Android Developer & Designer
 
